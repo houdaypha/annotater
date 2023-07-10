@@ -162,4 +162,3 @@ cython_debug/
 
 # Special
 cache/annotation.csv
-cache/state.json
