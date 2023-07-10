@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"  /> 
+    <title>Video Annotation</title>
+</head>
+<body>
+    <h1>Video {{index}}</h1>
+    <video width="640" height="360" controls autoplay>
+        <source src="{{ url_for('serve_video', video_path=video) }}"  type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <form method="POST" action="/">
+        <div class="radio-container">
+            <input type="radio" id="angry" name="choice" value="angry">
+            <label for="angry">Angry</label>
+        </div>
+        <div class="radio-container">
+            <input type="radio" id="sad" name="choice" value="sad">
+            <label for="sad">Sad</label>
+        </div>
+        <div class="radio-container">
+            <input type="radio" id="happy" name="choice" value="happy">
+            <label for="happy">Happy</label>
+        </div>
+        <div class="radio-container">
+            <input type="radio" id="calm" name="choice" value="calm">
+            <label for="calm">Calm</label>
+        </div>
+        <br>
+        <input type="submit" value="Next" class="btn">
+    </form>
+</body>
+</html>
